@@ -1,0 +1,125 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="{% url 'home' %}">AGRÍCOLA</a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-submenu><i class="fa fa-building" aria-hidden="true"></i> Empresa <span class="caret"></span></a>
+
+          <ul class="dropdown-menu" role="button">
+            <li class="dropdown-submenu">
+              <a><i class="fa fa-users" aria-hidden="true"></i> Personas</a>
+
+              <ul class="dropdown-menu">
+                <li><a href="{% url 'personas:persona_fisica' %}"><i class="fa fa-user" aria-hidden="true"></i> Personas Físicas</a></li>
+                <li><a href="{% url 'personas:persona_moral' %}" ><i class="fa fa-building" aria-hidden="true"></i> Personas Morales</a></li>
+                 <li><a href="{% url 'personas:beneficiarios' %}" ><i class="fa fa-user-circle" aria-hidden="true"></i> Beneficiarios</a></li>
+              </ul>
+            </li>
+            <li class="dropdown-submenu">
+              <a tabindex="0"><i class="fa fa-info" aria-hidden="true"></i> Información General</a>
+
+              <ul class="dropdown-menu">
+                <li><a tabindex="0" href="{% url 'informacion_general:direccion_cedente' %}"><i class="fa fa-address-book-o" aria-hidden="true"></i> Domicilios y Teléfonos</a></li>
+                <li><a tabindex="0" href="{% url 'informacion_general:consejo_administracion' %}"><i class="fa fa-user-circle" aria-hidden="true"></i> Consejo de Administración</a></li>
+                <li><a tabindex="0" href="{% url 'informacion_general:contratos_reaseguro' %}"><i class="fa fa-list-alt" aria-hidden="true"></i> Contratos de Reaseguro</a></li>
+                <li><a tabindex="0" href="{% url 'informacion_general:cuentas_bancarias' %}"><i class="fa fa-university" aria-hidden="true"></i> Cuentas Bancarias</a></li>
+                <li><a tabindex="0" href="{% url 'informacion_general:personal_apoyo' %}"><i class="fa fa-hand-paper-o" aria-hidden="true"></i> Personal</a></li>
+                <li><a tabindex="0" href="{% url 'informacion_general:registros_publicos' %}"><i class="fa fa-file-text-o" aria-hidden="true"></i> Registros Públicos</a></li>
+                <li><a tabindex="0" href="{% url 'informacion_general:area_de_influencia' %}"><i class="fa fa-globe" aria-hidden="true"></i> Zona de Influencia</a></li>
+                 <li><a tabindex="0" href="{% url 'informacion_general:cargar_logo' %}"><i class="fa fa-file-image-o" aria-hidden="true"></i> Cargar Logo</a></li>
+              </ul>
+            </li>           
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-tasks" aria-hidden="true"></i> Programación<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="{% url 'programas_aseguramiento:programas_aseguramiento' %}"><i class="fa fa-flask" aria-hidden="true"></i> Programas de Aseguramiento</a></li>
+            <li><a href="{% url 'cotizador:cotizador' %}"><i class="fa fa-usd" aria-hidden="true"></i> Cotizador</a></li>
+             <li><a href="{% url 'solicitud_reaseguro:solicitud_reaseguro' %}"><i class="fa fa-newspaper-o" aria-hidden="true"></i> Solicitud de reaseguro</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-submenu><i class="fa fa-briefcase" aria-hidden="true"></i> Operaciones<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="button">
+            <li class="dropdown-header">SUSCRIPCIÓN</li>
+            <li><a href="{% url 'solicitud_aseguramiento:solicitudes_aseguramiento' %}"><i class="fa fa-file-text-o" aria-hidden="true"></i> Solicitud de Aseguramiento</a></li>
+            <li><a href="{% url 'constancias:constancias' %}"><i class="fa fa-book" aria-hidden="true"></i> Constancias</a></li>
+            <li><a href="{% url 'endosos:solicitud_endoso' %}"><i class="fa fa-bandcamp" aria-hidden="true"></i> Solicitud de Endoso</a></li>
+            <li><a href="{% url 'endosos:endosos' %}"><i class="fa fa-files-o" aria-hidden="true"></i> Endosos</a></li>
+            <li><a href="{% url 'constancias:registro_constancias_endosos' %}"><i class="fa fa-files-o" aria-hidden="true"></i> Registro de Constancias y Endosos</a></li>
+            <li><a href="{% url 'constancias:cancelar_constancias_treinta_dias' %}"><i class="fa fa-ban" aria-hidden="true"></i> Cancelar Constancias</a></li>
+            <li class="divider"></li>
+            <li class="dropdown-header">ACTA ÚNICA</li>
+            <li><a href="{% url 'acta_unica:acta_unica_front' %}"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> Imprimir Formato Prellenado</a></li>
+            <li><a href="{% url 'acta_de_campo:acta_de_campo' %}"><i class="fa fa-list-ol" aria-hidden="true"></i> Llenar Acta de Campo</a></li>
+            <li class="divider"></li>
+            <li class="dropdown-header">AVISOS</li>
+            <li><a href="{% url 'avisos:aviso_siniestro_recoleccion' %}"><i class="fa fa-archive" aria-hidden="true"></i> Avisos de Siniestros y Recolección</a></li>
+            <li><a href="{% url 'avisos:aviso_arraigo' %}"><i class="fa fa-calendar-check-o" aria-hidden="true"></i> Avisos de Arraigo</a></li>
+            <li class="divider"></li>
+            <li class="dropdown-header">SINIESTROS</li>
+            <li class="dropdown-submenu">
+              <a><i class="fa fa-bolt" aria-hidden="true"></i> Ajuste de Siniestros</a>
+              <ul class="dropdown-menu">
+                 <li><a href="{% url 'siniestros_recoleccion:ajuste_recoleccion' %}"><i class="fa fa-hand-lizard-o" aria-hidden="true"></i> A la Recolección</a></li>
+                 <li><a href="{% url 'siniestros_planta:ajuste_planta' %}"><i class="fa fa-envira" aria-hidden="true"></i> A la Planta</a></li>
+                 <li><a href="{% url 'siniestros_daño_directo:ajuste_daño_directo' %}"><i class="fa fa-ambulance" aria-hidden="true"></i> Al Daño Directo</a></li>
+              </ul>
+            </li>
+
+            <li><a href="{% url 'siniestros_informes:siniestros_informes' %}"><i class="fa fa-bell-o" aria-hidden="true"></i> Registro y obligaciones pendientes por cumplir</a></li>
+
+            <li><a href="{% url 'siniestros_informes:aprobacion_ajustes_siniestros' %}"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> Aprobación de ajustes de siniestro</a></li>
+            
+            <li><a href="{% url 'siniestros_informes:registro_siniestros_ajustados_dictaminados' %}"><i class="fa fa-list" aria-hidden="true"></i> Registro de siniestros ajustados y dictaminados</a></li>
+           
+          </ul>
+        </li>
+         <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-university" aria-hidden="true"></i> Finanzas<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li class="dropdown-header">INGRESOS</li>
+            <li><a href="{% url 'ingresos:cobro_constancias' %}"><i class="fa fa-money" aria-hidden="true"></i> Cobro de Constancias</a></li>
+            <li><a href="{% url 'ingresos:cobro_endoso_aumento' %}"><i class="fa fa-money" aria-hidden="true"></i> Cobro de Endosos de Aumento</a></li>
+            <li><a href="{% url 'ingresos:reporte_cobranza' %}"><i class="fa fa-file-pdf-o" aria-hidden="true"></i>  Reporte de Cobranza</a></li>
+            <li class="divider"></li>
+            <li class="dropdown-header">EGRESOS</li>
+             <li><a href="{% url 'ingresos:pago_endoso_cancelacion' %}"><i class="fa fa-usd" aria-hidden="true"></i> Pago de endosos de cancelación y disminución</a></li>
+
+             <li><a href="{% url 'egresos:pago_siniestros' %}"><i class="fa fa-share-square-o" aria-hidden="true"></i> Pago de siniestros</a></li>
+            <li class="divider"></li>
+            <li class="dropdown-header">CONTABILIDAD</li>
+             <li><a href="{% url 'contabilidad:reporte_movimientos' %}"><i class="fa fa-list-alt" aria-hidden="true"></i> Reporte de Movimientos auxiliares del catálogo</a></li>
+
+            <li class="divider"></li>
+            <li class="dropdown-header">SUBSIDIO</li>
+             <li><a href="{% url 'subsidio:solicitud_subsidio' %}"><i class="fa fa fa-list" aria-hidden="true"></i> Solicitud de subsidio</a></li>
+
+          </ul>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        {% if request.user.is_authenticated %}
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ request.user.get_full_name }}<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="{% url 'authentication:user-settings' %}"><i class="fa fa-cog" aria-hidden="true"></i> Configuración</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="{% url 'authentication:logout' %}"><i class="fa fa-sign-out" aria-hidden="true"></i> Salir</a></li>
+          </ul>
+        </li>
+        {% endif %}
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</nav>
