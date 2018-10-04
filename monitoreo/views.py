@@ -16,7 +16,7 @@ class RegistroSensoresViewSet(viewsets.ModelViewSet):
 	queryset=RegistroSensores.objects.all()
 	serializer_class=RegistroSensoresSerializer
 
-@login_required()
+#@login_required()
 def get_registro_sensores(request):
 	registroSensores_json = []
 	registroSensores = RegistroSensores.objects.all()
