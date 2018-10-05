@@ -4,7 +4,7 @@ from rest_framework.routers import DefaultRouter
 
 router=DefaultRouter()
 router.register(r'RegistroSensores',RegistroSensoresViewSet)
-
+#api/v1/RegistroSensores
 RegistroSensoresViewSet
 urlpatterns=[
 	url(r'^api/v1/', include(router.urls)),
