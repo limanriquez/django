@@ -26,7 +26,7 @@ SECRET_KEY = 'cf(&93#d*ai8k(5q%rw*mst4g47pn*drnu9-fg6wlvf4r+0rmt'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-#ALLOWED_HOSTS = ['lasser01.herokuapp.com']
+ALLOWED_HOSTS = ['lasser01.herokuapp.com']
 
 
 
