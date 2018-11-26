@@ -51,6 +51,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+    
     #ooooo'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
@@ -71,7 +73,7 @@ TEMPLATES = [
         },
     },
 ]
-
+WSGI_APPLICATION = 'pd110.wsgi.application'
 #oooooooooWSGI_APPLICATION = 'pd110.wsgi.application'
 
 
