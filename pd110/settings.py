@@ -128,9 +128,9 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,"static"),
 ]
-#oooooSTATIC_ROOT = os.path.join(BASE_DIR,"dist","static")
+STATIC_ROOT = os.path.join(BASE_DIR,"dist","static")
 
-#ooooooSTATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 #AUTH_USER_MODEL='authentication.Account'
 
