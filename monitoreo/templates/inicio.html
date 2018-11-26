@@ -24,9 +24,37 @@
 		padding: 0px !important;
 	}
 </style>
+<form method ="post">
 
 
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+			<div class="form-group">
+				<label for="username">Nombre de usuario:</label>
+	   			<input class="form-control" type="text" name="username">
+	   		</div>
+		</div>
+	</div>
 
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+			<div class="form-group">
+				<label for="username">Contraseña:</label>
+   				<input class="form-control" type="password" name="password">
+	   		</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+			<div class="form-group">
+				<a href="#">Olvide mi contraseña:</a>
+   				<input class="btn btn-primary" type="submit" value="Ingresar">
+	   		</div>
+		</div>
+	</div>
+
+</form>
 <div ng-controller="Monitoreo as vm">
 
 	<div class ="content dx-viewport">
@@ -43,7 +71,19 @@
       		<div id="line-chart"></div>
     	</div>
 
-       
+
+    	<div class="col-sm-12 text-center">
+	        <div id="vm.chart-demo">
+	            <div id="chart" dx-chart="vm.chartOptions"></div>
+	            <div class="options">
+	                <div class="caption">Options</div>
+	                <div class="option">
+	                    <span>Series Type</span> 
+	                    <div dx-select-box="vm.typesOptions"></div>
+	                </div>
+	            </div>
+	        </div>
+        </div>
        
 	</div>
 

@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
+from django.core.urlresolvers import reverse_lazy
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -25,7 +26,8 @@ SECRET_KEY = 'cf(&93#d*ai8k(5q%rw*mst4g47pn*drnu9-fg6wlvf4r+0rmt'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['lasser01.herokuapp.com']
+#ALLOWED_HOSTS = ['lasser01.herokuapp.com']
+
 
 
 # Application definition
@@ -49,7 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    #ooooo'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'pd110.urls'
@@ -60,7 +62,7 @@ TEMPLATES = [
         'DIRS': [os.path.join(BASE_DIR,"templates")],
         'APP_DIRS': True,
         'OPTIONS': {
-            'context_processors': [
+                    'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
@@ -70,7 +72,9 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'pd110.wsgi.application'
+#oooooooooWSGI_APPLICATION = 'pd110.wsgi.application'
+
+
 
 
 # Database
@@ -124,13 +128,14 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,"static"),
 ]
-STATIC_ROOT = os.path.join(BASE_DIR,"dist","static")
+#oooooSTATIC_ROOT = os.path.join(BASE_DIR,"dist","static")
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+#ooooooSTATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 #AUTH_USER_MODEL='authentication.Account'
 
 #LOGIN_URL='/login/'
+LOGIN_REDIRECT_URL=reverse_lazy('get_registro_sensores')
 
 REST_FRAMEWORK ={
     'DEFAULT_PERMISSION_CLASSES': (

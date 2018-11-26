@@ -4,6 +4,9 @@ from rest_framework import viewsets
 from django.http import JsonResponse, HttpResponse
 from monitoreo.serializers import *
 from monitoreo.views import *
+from urllib.request import urlopen
+from monitoreo.models import *
+import time
 # Create your views here.
 @login_required()
 def inicio(request):
@@ -32,4 +35,22 @@ def get_registro_sensores(request):
 			'b': registros.Sensor2,
 		}
 		registroSensores_json.append(tmp)
+	return JsonResponse(registroSensores_json, safe = False)
+
+def leerTxt(request):
+	registroSensores_json = []
+	data=urlopen('https://nuestrabodalyo.000webhostapp.com/datos.txt')
+	x=[]
+	for line in data:
+		#print(line[0:len(line)-1])
+		a=str(line)
+		x = a.split(",")
+		fecha=x[0] 
+		fecha=fecha[2:len(fecha)]
+		informacion=RegistroSensores(
+			Fecha=x[1],#time.strftime("%Y/%m/%Y"),
+			Hora=x[2],
+			Sensor1=x[3],
+			Sensor2=x[4])
+		informacion.save()
 	return JsonResponse(registroSensores_json, safe = False)
