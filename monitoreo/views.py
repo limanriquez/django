@@ -33,6 +33,19 @@ def get_registro_sensores(request):
 		registroSensores_json.append(tmp)
 	return JsonResponse(registroSensores_json, safe = False)
 
+def get_ultimos_registro_sensores(request):
+	registroSensores_json = []
+	registroSensores = RegistroSensores.objects.all()
+	for registros in registroSensores:	
+		tmp = {
+			'id': str(x),
+			'sensor1': registros.Sensor1,
+			'sensor2': registros.Sensor2,
+			'idLocal':registros.idLocal,
+		}
+		registroSensores_json.append(tmp)
+	return JsonResponse(registroSensores_json, safe = False)
+
 def leerTxt(request):
 	registroSensores_json = []
 	data=urlopen('https://nuestrabodalyo.000webhostapp.com/datos.txt')
