@@ -7,6 +7,7 @@ class RegistroSensores(models.Model):
 	Hora=models.CharField(max_length=50)
 	Sensor1=models.FloatField()
 	Sensor2=models.FloatField()
+	idLocal=models.IntegerField(null=True)
 
 	def __unicode__(self):
 		return self.Hora

@@ -26,9 +26,23 @@ SECRET_KEY = 'cf(&93#d*ai8k(5q%rw*mst4g47pn*drnu9-fg6wlvf4r+0rmt'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+#ooooooooALLOWED_HOSTS = ['lasser01.herokuapp.com']
+
+#Todas las lineas que estan marcadas con #ooooooooooo
+#deberan ser descometadas para que funsione en el servidor
+#de heroku
+
+#Ejecutar la instruccion Heroku login
+#correo: limanriquez@gmail.com
+#contrasenia: Chihuahua-10
+#una vez dentro puede ejecutar
+#git push heroku master
+#ejecutar heroku run bash 
+#para abrir la terminal de heroku
+#correr python manage.py collectstatic
+#ooooooooALLOWED_HOSTS = ['lasser01.herokuapp.com']
 ALLOWED_HOSTS = ['lasser01.herokuapp.com']
-
-
+#ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -52,7 +66,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
-    
+
     #ooooo'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 

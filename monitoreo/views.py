@@ -23,16 +23,12 @@ class RegistroSensoresViewSet(viewsets.ModelViewSet):
 def get_registro_sensores(request):
 	registroSensores_json = []
 	registroSensores = RegistroSensores.objects.all()
-	x=0
-	for registros in registroSensores:
-		#'Hora':registros.Hora,
-		#'Sensor2':registros.Sensor2,
-		#'Id':registros.Id,
-		x=x+1
+	for registros in registroSensores:	
 		tmp = {
-			'y': str(x),
-			'a': registros.Sensor1,
-			'b': registros.Sensor2,
+			'id': str(x),
+			'sensor1': registros.Sensor1,
+			'sensor2': registros.Sensor2,
+			'idLocal':registros.idLocal,
 		}
 		registroSensores_json.append(tmp)
 	return JsonResponse(registroSensores_json, safe = False)
@@ -41,16 +37,33 @@ def leerTxt(request):
 	registroSensores_json = []
 	data=urlopen('https://nuestrabodalyo.000webhostapp.com/datos.txt')
 	x=[]
+	cadenaid=""
+	if data=="":
+		print("Sin información")
 	for line in data:
 		#print(line[0:len(line)-1])
 		a=str(line)
 		x = a.split(",")
 		fecha=x[0] 
 		fecha=fecha[2:len(fecha)]
-		informacion=RegistroSensores(
-			Fecha=x[1],#time.strftime("%Y/%m/%Y"),
-			Hora=x[2],
-			Sensor1=x[3],
-			Sensor2=x[4])
-		informacion.save()
-	return JsonResponse(registroSensores_json, safe = False)
+
+		registroSensores = RegistroSensores.objects.filter(idLocal=x[5])
+
+		if len(registroSensores)>0:
+			print("ya registrado " + x[5])
+		else:
+			informacion=RegistroSensores(
+				Fecha=x[1],#time.strftime("%Y/%m/%Y"),
+				Hora=x[2],
+				Sensor1=x[3],
+				Sensor2=x[4],
+				idLocal=x[5])
+			informacion.save()
+			if cadenaid=="":
+				cadenaid=cadenaid + x[5]
+			else:
+				cadenaid=cadenaid +","+ x[5]
+			print("guardado " + x[5])
+		registroSensores_json={'id':cadenaid
+		}
+	return HttpResponse(cadenaid)

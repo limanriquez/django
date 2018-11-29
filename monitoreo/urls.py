@@ -1,5 +1,5 @@
-from django.conf.urls import url, include
-from monitoreo.views import *
+from django.conf.urls import url, include 
+from monitoreo.views import * 
 from rest_framework.routers import DefaultRouter
 
 from django.contrib import admin
